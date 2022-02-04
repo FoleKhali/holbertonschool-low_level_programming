@@ -3,9 +3,9 @@
 #include <stdio.h>
 
 /*
- * main - void
+ * main - Prints a random number.
  *
- *Return: Always 0
+ *Return: Always 0.
  */
 int main(void)
 {
