@@ -7,13 +7,13 @@
  */
 int _abs(int o)
 {
-	if (n < 0)
+	if (o < 0)
 	{
-		return (-n);
+		return (-o);
 	}
 	else
 	{
-		return (n);
+		return (o);
 	}
 	return (0);
 }
