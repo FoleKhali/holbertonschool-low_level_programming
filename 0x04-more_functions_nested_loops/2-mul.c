@@ -8,11 +8,7 @@
  */
 int mul(int a, int b)
 {
-	int c = 0;
 
-	c = a * b;
-	_putchar(c);
-
-	return (c);
+	return (a * b);
 
 }
