@@ -1,21 +1,26 @@
 #include "main.h"
 
 /**
- *_strncpy - concatenates two strings
+ *_strncat - concatenates two strings
  *@dest: pointer for the first string we want to change
  *@src: pointer  for the second string
  *@n: number of bytes
- *Return: the new string dest with n bytes new
+ *Return: the new string with n bytes
  */
-char *_strncpy(char *dest, char *src, int n)
+char *_strncat(char *dest, char *src, int n)
 {
+	int longdest;
 	int j;
+
+	for (longdest = 0; dest[longdest] != '\0'; longdest++)
+	{
+	}
 
 	for (j = 0; j < n && src[j] != '\0'; j++)
 	{
-		dest[j] = src[j];
+		dest[longdest] = src[j];
+		longdest++;
 	}
-	for ( ; j < n; j++)
-		dest[j] = '\0';
+	dest[longdest] = '\0';
 	return (dest);
 }
