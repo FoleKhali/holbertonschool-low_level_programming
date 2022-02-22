@@ -1,38 +1,32 @@
 #include "main.h"
-#include <stdio.h>
 
 /**
- *_strpbrk - searches a string for any of a set of bytes
- *@s: the string
- *@accept: characters to find
- *
- *Return: s
- */
-char *_strpbrk(char *s, char *accept)
+  * _strspn - search a string for a set of bytes
+  * @s: source string
+  * @accept: accepted string
+  *
+  * Return: number of bytes in the init segment
+  */
+unsigned int _strspn(char *s, char *accept)
 {
-	unsigned int i;
-	unsigned int j;
-	unsigned int ls;
-	unsigned int la;
+	unsigned int a = 0, b, t = 0;
 
-	for (ls = 0; s[ls] != '\0'; ls++)
+	while (accept[a])
 	{
-	}
-	for (la = 0; accept[la] != '\0'; la++)
-	{
-	}
-	printf("%d\n", ls);
-	printf("%d\n", la);
-	for (i = 0; i < ls - 1; i++)
-	{
-		for (j = 0; j < la - 1; j++)
+		b = 0;
+
+		while (s[b] != 32)
 		{
-			if (s[i] == accept[j])
-				return (&(s[i]));
+			if (accept[a] == s[b])
+			{
+				t++;
+			}
+
+			b++;
 		}
+
+		a++;
 	}
-	if (i < ls)
-		return (&(s[i]));
-	else
-		return ('\0');
+
+	return (t);
 }
