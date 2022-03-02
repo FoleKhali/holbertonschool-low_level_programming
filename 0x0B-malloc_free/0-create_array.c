@@ -10,7 +10,7 @@
 
 char *create_array(unsigned int size, char c)
 {
-	char *a;
+	char *q;
 	unsigned int i;
 
 	if (size == 0)
@@ -18,9 +18,9 @@ char *create_array(unsigned int size, char c)
 		return (NULL);
 	}
 
-	a = malloc(sizeof(char) * size);
+	q = malloc(sizeof(char) * size);
 
-	if (a == NULL)
+	if (q == NULL)
 	{
 		return (NULL);
 	}
@@ -28,9 +28,9 @@ char *create_array(unsigned int size, char c)
 	{
 		for (i = 0; i < size; i++)
 		{
-			a[i] = c;
+			q[i] = c;
 		}
 	}
-	return (a);
+	return (q);
 
 }
