@@ -47,4 +47,3 @@ int _strlen(char *s)
         }
         return (i);
 }
-
