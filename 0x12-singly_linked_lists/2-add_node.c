@@ -1,5 +1,5 @@
 #include <stdlib.h>
-#include <stdio.h>
+#include <string.h>
 #include "lists.h"
 
 /**
@@ -8,42 +8,43 @@
  * @str: added string
  * Return: The adress of the new list and NULL if fail
  */
-list_t *add_node(list_t **head, const char *str);
+list_t *add_node(list_t **head, const char *str)
 {
-	list_t *a;
+	list_t *temp;
 
 	if (head != NULL && str != NULL)
 	{
-		a = malloc(sizeof(list_t));
-		if (a == NULL)
+		temp = malloc(sizeof(list_t));
+		if (temp == NULL)
 			return (NULL);
 
-		a->str = strdup(str);
-		a->len = _strlen(str);
-		a->next = *head;
+		temp->str = strdup(str);
+		temp->len = _strlen(str);
+		temp->next = *head;
 
-		*head = a;
+		*head = temp;
 
-		return (a);
+		return (temp);
 	}
 
 	return (0);
 }
 
 /**
- * _strlen - Entry point
- *@s: pointer the string we want to now length
- *
- * Return: 0
- */
-int _strlen(char *s)
+  * _strlen - Returns the length of a string
+  * @s: String to count
+  *
+  * Return: String length
+  */
+int _strlen(const char *s)
 {
-        int i;
+	int c = 0;
 
-        i = 0;
-        while (*(s + i) != '\0')
-        {
-                i++;
-        }
-        return (i);
+	while (*s)
+	{
+		s++;
+		c++;
+	}
+
+	return (c);
 }
