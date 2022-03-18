@@ -38,6 +38,7 @@ list_t *add_node(list_t **head, const char *str)
   */
 int _strlen(const char *s)
 {
+<<<<<<< HEAD
 	int c = 0;
 
 	while (*s)
@@ -47,4 +48,14 @@ int _strlen(const char *s)
 	}
 
 	return (c);
+=======
+        int i;
+
+        i = 0;
+        while (*(s + i) != '\0')
+        {
+                i++;
+        }
+        return (i);
+>>>>>>> c1ae77eee4c6eb9a337027ab60cb4fe73a2df3c0
 }
