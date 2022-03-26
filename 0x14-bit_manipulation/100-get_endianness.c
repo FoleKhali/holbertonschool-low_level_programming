@@ -1,15 +1,14 @@
 #include <stdio.h>
 #include <stdint.h>
 
-int main(void)
+int get_endianness(void)
 {
-	int16_t i = 1;
-	int8_t *p = (int8_t *) &i;
+	int a = 1;
 
-	if (p[0] == 1)
-		printf("Little Endian\n");
-	else
-		printf("Big Endian\n");
-	
-	return 0;
+	char *pa = (char *) &a;
+
+	if (*pa == 1)
+		return (1);
+
+	return (0);
 }
