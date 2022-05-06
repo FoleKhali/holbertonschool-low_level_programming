@@ -2,8 +2,8 @@
 
 /**
  * delete_dnodeint_at_index - delete a node at the index
- * @head - head
- * @index - the index
+ * @head:  head
+ * @index: the index
  * Return: 1.
  */
 
