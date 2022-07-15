@@ -1,48 +1,19 @@
 #!/usr/bin/python3
-"""File that prints a grid"""
+"""This module defines the function island_perimeter"""
 
 
 def island_perimeter(grid):
-    """Returns the perimeter of the island described"""
-
+    """This function returns the perimeter of the island"""
     perimeter = 0
-    for i in range(len(grid)):
-        only = 0
-        for j in range(len(grid[i])):
-            clear = 0
-            perimeter += 4
-            if (grid[i][j] == 1):
-                only = 1
-                try:
-                    if (grid[i + 1][j] == 1):
-                        perimeter -= 1
-                        clear += 1
-                        only += 1
-                except:
-                    return 0
-                try:
-                    if (grid[i - 1][j] == 1):
-                        perimeter -= 1
-                        clear += 1
-                        only += 1
-                except:
-                    return 0
-                try:
-                    if (grid[i][j + 1] == 1):
-                        perimeter -= 1
-                        clear += 1
-                        only += 1
-                except:
-                    return 0
-                try:
-                    if (grid[i][j - 1] == 1):
-                        perimeter -= 1
-                        clear += 1
-                        only += 1
-                except:
-                    return 0
-            if (clear == 0):
-                perimeter -= 4
-        if (only == 1):
-            return 4
+    for row in range(0, len(grid)):
+        for zone in range(0, len(grid[row])):
+            if grid[row][zone] == 1:
+                if row == 0 or grid[row - 1][zone] == 0:
+                    perimeter += 1
+                if zone == 0 or grid[row][zone - 1] == 0:
+                    perimeter += 1
+                if row == len(grid) - 1 or grid[row + 1][zone] == 0:
+                    perimeter += 1
+                if zone == len(grid[row]) - 1 or grid[row][zone + 1] == 0:
+                    perimeter += 1
     return perimeter
