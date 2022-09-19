@@ -1,4 +1,4 @@
-#include "holberton.h"
+#include "main.h"
 #include <stdio.h>
 /**
  * print_to_98  - give you the secuence fron n number to 98
